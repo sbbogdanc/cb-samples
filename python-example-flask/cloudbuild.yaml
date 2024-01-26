@@ -25,7 +25,8 @@ steps:
   # Install dependencies
   - name: python
     entrypoint: pip
-    args: ["install", "-r", "./python-example-flask/requirements.txt", "--user"]
+    args: ["install", "-r", "requirements.txt", "--user"]
+    dir: 'python-example-flask'
 # [END cloudbuild_python_dependencies_yaml]
 
   # [START cloudbuild_python_tests_yaml]
@@ -40,6 +41,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
            'us-west2-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}', '.']
+    dir: 'python-example-flask'
   # [END cloudbuild_python_image_yaml]
 
   # [START cloudbuild_python_push_yaml]
