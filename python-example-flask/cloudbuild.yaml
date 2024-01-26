@@ -17,6 +17,10 @@
 # [START cloudbuild_python_yaml]
 # [START cloudbuild_python_dependencies_yaml]
 steps:
+  # list directory contents
+  - name: 'list recursively'
+    args: ['ls', '-R']
+  
   # Install dependencies
   - name: python
     entrypoint: pip
