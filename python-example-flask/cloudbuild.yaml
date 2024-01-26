@@ -18,8 +18,7 @@
 # [START cloudbuild_python_dependencies_yaml]
 steps:
   # list directory contents
-  - name: gcr.io/cloud-builders/gcloud
-    entrypoint: 'bash'
+  - entrypoint: 'bash'
     args: ['ls', '-R']
 
   # Install dependencies
