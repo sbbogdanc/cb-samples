@@ -56,7 +56,11 @@ steps:
            '--region', 'us-central1', '--platform', 'managed', 
            '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
-  
+
+# substitutions
+substitutions:
+    _ARTIFACT_REGISTRY_REPO: quickstart-docker-repo # default value
+
 # [START cloudbuild_python_logs_yaml]
 # Save test logs to Google Cloud Storage
 artifacts:
