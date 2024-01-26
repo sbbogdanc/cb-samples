@@ -21,9 +21,6 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: [ '-c', 'ls -la']
-
-  # set environment variables
-  - name: 
   
   # Install dependencies
   - name: python
